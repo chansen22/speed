@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="FSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWx-VI-36A">
+                                <rect key="frame" x="20" y="273" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%@" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-3L-Beh">
+                                <rect key="frame" x="20" y="302" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-Wr-i08">
+                                <rect key="frame" x="20" y="518" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Location Updating">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleLocationServices:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eYH-NT-6ah"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zd8-3L-Beh" firstAttribute="trailing" secondItem="UZh-Wr-i08" secondAttribute="trailing" id="1Re-8w-Z5H"/>
+                            <constraint firstItem="UZh-Wr-i08" firstAttribute="leading" secondItem="zd8-3L-Beh" secondAttribute="leading" id="6ir-ju-p67"/>
+                            <constraint firstAttribute="bottom" secondItem="UZh-Wr-i08" secondAttribute="bottom" constant="20" symbolic="YES" id="8p2-js-GbE"/>
+                            <constraint firstAttribute="trailing" secondItem="RWx-VI-36A" secondAttribute="trailing" constant="20" symbolic="YES" id="AE1-50-iC9"/>
+                            <constraint firstItem="RWx-VI-36A" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="SkP-N7-fQD"/>
+                            <constraint firstItem="zd8-3L-Beh" firstAttribute="leading" secondItem="RWx-VI-36A" secondAttribute="leading" id="X2B-b8-S6H"/>
+                            <constraint firstItem="zd8-3L-Beh" firstAttribute="trailing" secondItem="RWx-VI-36A" secondAttribute="trailing" id="euR-fv-Hg0"/>
+                            <constraint firstItem="zd8-3L-Beh" firstAttribute="top" secondItem="RWx-VI-36A" secondAttribute="bottom" constant="8" symbolic="YES" id="fHD-OD-c2R"/>
+                            <constraint firstItem="RWx-VI-36A" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="253" id="nqc-dq-ybe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationButton" destination="UZh-Wr-i08" id="rRB-Nk-lkA"/>
+                        <outlet property="speedLabel" destination="zd8-3L-Beh" id="2bZ-GW-0tn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
