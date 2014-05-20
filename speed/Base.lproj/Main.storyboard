@@ -103,6 +103,7 @@
                         <outlet property="distanceFilterTextField" destination="dIV-s7-M9C" id="f0P-eq-kf5"/>
                         <outlet property="locationButton" destination="UZh-Wr-i08" id="rRB-Nk-lkA"/>
                         <outlet property="speedLabel" destination="zd8-3L-Beh" id="2bZ-GW-0tn"/>
+                        <outlet property="topLayoutConstraint" destination="3mn-xl-v1p" id="hdL-Yo-dK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

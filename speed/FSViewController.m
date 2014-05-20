@@ -22,6 +22,7 @@
 
 @property (nonatomic) BOOL updating;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLayoutConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 
 @end
 
@@ -65,6 +66,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [UIView animateWithDuration:.2 animations:^{
         self.bottomLayoutConstraint.constant += 100;
+        self.topLayoutConstraint.constant -= 50;
         [self.view layoutIfNeeded];
     }];
 }
@@ -80,6 +82,7 @@
     [self.locationButton setTitle:@"Stop Updating" forState:UIControlStateNormal];
     [UIView animateWithDuration:.2 animations:^{
         self.bottomLayoutConstraint.constant -= 100;
+        self.topLayoutConstraint.constant += 50;
         [self.view layoutIfNeeded];
     }];
 }
