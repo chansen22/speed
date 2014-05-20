@@ -8,39 +8,67 @@
 
 #import "FSAppDelegate.h"
 
+#import "Plot.h"
+#import <CoreLocation/CoreLocation.h>
+
+typedef void (^didRecieveLocationWithSpeedBlock)();
+
+@interface FSAppDelegate() <PlotDelegate, CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) didRecieveLocationWithSpeedBlock didRecieveLocationWithSpeedBlock;
+@end
+
 @implementation FSAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (CLLocationManager *)locationManager {
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        _locationManager.distanceFilter = -1;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    }
+    return _locationManager;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    PlotConfiguration *config = [[PlotConfiguration alloc] initWithPublicKey:@"fFVLRFLnwLB0zXbG" delegate:self];
+    [Plot initializeWithConfiguration:config launchOptions:launchOptions];
+    
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [Plot handleNotification:notification];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)plotFilterNotifications:(PlotFilterNotifications *)filterNotifications {
+    [self.locationManager startUpdatingLocation];
+    
+    self.didRecieveLocationWithSpeedBlock = ^{
+        NSArray *notifications = filterNotifications.uiNotifications;
+        [filterNotifications showNotifications:notifications];
+    };
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void)plotHandleNotification:(UILocalNotification *)notification data:(NSString *)data {
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        [[[UIAlertView alloc] initWithTitle:@"" message:notification.alertBody delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] show];
+    }
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
+#pragma mark - Location Manager
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    for (CLLocation *loc in locations) {
+        if (loc.speed > 0 && loc.speed < 5) {
+            self.currentLocation = loc;
+            [self.locationManager stopUpdatingLocation];
+            if (self.didRecieveLocationWithSpeedBlock)
+                self.didRecieveLocationWithSpeedBlock();
+        }
+    }
 }
 
 @end

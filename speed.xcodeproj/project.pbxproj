@@ -21,6 +21,9 @@
 		E159B3D5192ACC7900A6ADC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159B3B7192ACC7900A6ADC6 /* UIKit.framework */; };
 		E159B3DD192ACC7900A6ADC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E159B3DB192ACC7900A6ADC6 /* InfoPlist.strings */; };
 		E159B3DF192ACC7900A6ADC6 /* speedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E159B3DE192ACC7900A6ADC6 /* speedTests.m */; };
+		E159B3E9192BB7B300A6ADC6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E159B3E8192BB7B300A6ADC6 /* libsqlite3.dylib */; };
+		E159B3EB192BB7BA00A6ADC6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159B3EA192BB7BA00A6ADC6 /* CoreLocation.framework */; };
+		E159B3ED192BB7DB00A6ADC6 /* libPlot-v1_5_5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E159B3EC192BB7DB00A6ADC6 /* libPlot-v1_5_5.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		E159B3DA192ACC7900A6ADC6 /* speedTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "speedTests-Info.plist"; sourceTree = "<group>"; };
 		E159B3DC192ACC7900A6ADC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E159B3DE192ACC7900A6ADC6 /* speedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = speedTests.m; sourceTree = "<group>"; };
+		E159B3E8192BB7B300A6ADC6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		E159B3EA192BB7BA00A6ADC6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E159B3EC192BB7DB00A6ADC6 /* libPlot-v1_5_5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPlot-v1_5_5.a"; sourceTree = "<group>"; };
+		E159B3EE192BBFA000A6ADC6 /* Plot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plot.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +67,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E159B3EB192BB7BA00A6ADC6 /* CoreLocation.framework in Frameworks */,
+				E159B3E9192BB7B300A6ADC6 /* libsqlite3.dylib in Frameworks */,
 				E159B3B6192ACC7900A6ADC6 /* CoreGraphics.framework in Frameworks */,
 				E159B3B8192ACC7900A6ADC6 /* UIKit.framework in Frameworks */,
 				E159B3B4192ACC7900A6ADC6 /* Foundation.framework in Frameworks */,
+				E159B3ED192BB7DB00A6ADC6 /* libPlot-v1_5_5.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +111,10 @@
 		E159B3B2192ACC7900A6ADC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E159B3EE192BBFA000A6ADC6 /* Plot.h */,
+				E159B3EC192BB7DB00A6ADC6 /* libPlot-v1_5_5.a */,
+				E159B3EA192BB7BA00A6ADC6 /* CoreLocation.framework */,
+				E159B3E8192BB7B300A6ADC6 /* libsqlite3.dylib */,
 				E159B3B3192ACC7900A6ADC6 /* Foundation.framework */,
 				E159B3B5192ACC7900A6ADC6 /* CoreGraphics.framework */,
 				E159B3B7192ACC7900A6ADC6 /* UIKit.framework */,
@@ -381,6 +395,10 @@
 				GCC_PREFIX_HEADER = "speed/speed-Prefix.pch";
 				INFOPLIST_FILE = "speed/speed-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +413,10 @@
 				GCC_PREFIX_HEADER = "speed/speed-Prefix.pch";
 				INFOPLIST_FILE = "speed/speed-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -459,6 +481,7 @@
 				E159B3E4192ACC7900A6ADC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E159B3E5192ACC7900A6ADC6 /* Build configuration list for PBXNativeTarget "speedTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +490,7 @@
 				E159B3E7192ACC7900A6ADC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
