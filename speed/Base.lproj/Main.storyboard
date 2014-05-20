@@ -72,6 +72,26 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="TqL-Ym-Sox"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy is in meters how close the device should get on location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="Njc-aY-vyg">
+                                <rect key="frame" x="8" y="188" width="304" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4A4-m3-H1z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Filter is how often the phone should update, -1 is constant updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="ggo-UM-lQx">
+                                <rect key="frame" x="8" y="241" width="304" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9si-CA-APy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -84,17 +104,23 @@
                             <constraint firstItem="m2A-AU-26w" firstAttribute="leading" secondItem="dYS-WM-kZk" secondAttribute="trailing" constant="8" symbolic="YES" id="DQ2-nM-EWn"/>
                             <constraint firstItem="RWx-VI-36A" firstAttribute="leading" secondItem="zd8-3L-Beh" secondAttribute="leading" id="HA1-fB-IlN"/>
                             <constraint firstItem="dIV-s7-M9C" firstAttribute="trailing" secondItem="UZh-Wr-i08" secondAttribute="trailing" id="HKr-MH-fg4"/>
+                            <constraint firstItem="ggo-UM-lQx" firstAttribute="top" secondItem="Njc-aY-vyg" secondAttribute="bottom" constant="8" id="HnG-rM-Nhi"/>
                             <constraint firstItem="m2A-AU-26w" firstAttribute="trailing" secondItem="zd8-3L-Beh" secondAttribute="trailing" id="KWN-eF-a86"/>
+                            <constraint firstAttribute="trailing" secondItem="Njc-aY-vyg" secondAttribute="trailing" constant="8" id="L3y-bs-uLb"/>
                             <constraint firstItem="m2A-AU-26w" firstAttribute="leading" secondItem="dIV-s7-M9C" secondAttribute="leading" id="Pv1-WE-LVe"/>
+                            <constraint firstItem="Njc-aY-vyg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="QFW-Uy-ao6"/>
                             <constraint firstItem="UZh-Wr-i08" firstAttribute="leading" secondItem="zd8-3L-Beh" secondAttribute="leading" id="R0J-x8-AJD"/>
                             <constraint firstItem="RWx-VI-36A" firstAttribute="trailing" secondItem="zd8-3L-Beh" secondAttribute="trailing" id="WFN-Ug-TD8"/>
                             <constraint firstItem="cwG-d2-TlU" firstAttribute="centerY" secondItem="dIV-s7-M9C" secondAttribute="centerY" constant="-0.5" id="aLI-GE-C9A"/>
                             <constraint firstItem="dIV-s7-M9C" firstAttribute="leading" secondItem="cwG-d2-TlU" secondAttribute="trailing" constant="8" symbolic="YES" id="afg-Un-kmv"/>
+                            <constraint firstItem="Njc-aY-vyg" firstAttribute="trailing" secondItem="ggo-UM-lQx" secondAttribute="trailing" id="dZ5-9e-Fax"/>
                             <constraint firstItem="RWx-VI-36A" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="db6-fb-3Zf"/>
+                            <constraint firstItem="Njc-aY-vyg" firstAttribute="leading" secondItem="ggo-UM-lQx" secondAttribute="leading" id="kq7-Mp-N6c"/>
                             <constraint firstItem="zd8-3L-Beh" firstAttribute="top" secondItem="RWx-VI-36A" secondAttribute="bottom" constant="8" symbolic="YES" id="sPM-Ah-nxi"/>
                             <constraint firstAttribute="bottom" secondItem="UZh-Wr-i08" secondAttribute="bottom" constant="20" symbolic="YES" id="uis-61-m9t"/>
                             <constraint firstItem="dYS-WM-kZk" firstAttribute="leading" secondItem="cwG-d2-TlU" secondAttribute="leading" id="yGI-Og-ns9"/>
                             <constraint firstItem="cwG-d2-TlU" firstAttribute="top" secondItem="dYS-WM-kZk" secondAttribute="bottom" constant="17" id="zLR-1t-jvY"/>
+                            <constraint firstItem="Njc-aY-vyg" firstAttribute="top" secondItem="zd8-3L-Beh" secondAttribute="bottom" constant="33" id="zrH-5k-iOG"/>
                         </constraints>
                     </view>
                     <connections>
