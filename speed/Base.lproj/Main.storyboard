@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWx-VI-36A">
-                                <rect key="frame" x="20" y="273" width="280" height="21"/>
+                                <rect key="frame" x="20" y="105" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%@" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-3L-Beh">
-                                <rect key="frame" x="20" y="302" width="280" height="21"/>
+                                <rect key="frame" x="20" y="134" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -40,21 +40,67 @@
                                     <action selector="toggleLocationServices:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eYH-NT-6ah"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2A-AU-26w">
+                                <rect key="frame" x="135" y="331" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="IM2-8G-r60"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYS-WM-kZk">
+                                <rect key="frame" x="12" y="335" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Filter:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-d2-TlU">
+                                <rect key="frame" x="12" y="373" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIV-s7-M9C">
+                                <rect key="frame" x="135" y="369" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="TqL-Ym-Sox"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zd8-3L-Beh" firstAttribute="trailing" secondItem="UZh-Wr-i08" secondAttribute="trailing" id="1Re-8w-Z5H"/>
-                            <constraint firstItem="UZh-Wr-i08" firstAttribute="leading" secondItem="zd8-3L-Beh" secondAttribute="leading" id="6ir-ju-p67"/>
-                            <constraint firstAttribute="bottom" secondItem="UZh-Wr-i08" secondAttribute="bottom" constant="20" symbolic="YES" id="8p2-js-GbE"/>
-                            <constraint firstAttribute="trailing" secondItem="RWx-VI-36A" secondAttribute="trailing" constant="20" symbolic="YES" id="AE1-50-iC9"/>
-                            <constraint firstItem="RWx-VI-36A" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="SkP-N7-fQD"/>
-                            <constraint firstItem="zd8-3L-Beh" firstAttribute="leading" secondItem="RWx-VI-36A" secondAttribute="leading" id="X2B-b8-S6H"/>
-                            <constraint firstItem="zd8-3L-Beh" firstAttribute="trailing" secondItem="RWx-VI-36A" secondAttribute="trailing" id="euR-fv-Hg0"/>
-                            <constraint firstItem="zd8-3L-Beh" firstAttribute="top" secondItem="RWx-VI-36A" secondAttribute="bottom" constant="8" symbolic="YES" id="fHD-OD-c2R"/>
-                            <constraint firstItem="RWx-VI-36A" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="253" id="nqc-dq-ybe"/>
+                            <constraint firstAttribute="bottom" secondItem="dIV-s7-M9C" secondAttribute="bottom" constant="169" id="01U-gf-50B"/>
+                            <constraint firstItem="dIV-s7-M9C" firstAttribute="top" secondItem="m2A-AU-26w" secondAttribute="bottom" constant="8" symbolic="YES" id="2SY-tL-VEu"/>
+                            <constraint firstAttribute="trailing" secondItem="RWx-VI-36A" secondAttribute="trailing" constant="20" symbolic="YES" id="3eM-dJ-yXH"/>
+                            <constraint firstItem="RWx-VI-36A" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="85" id="3mn-xl-v1p"/>
+                            <constraint firstItem="dIV-s7-M9C" firstAttribute="trailing" secondItem="m2A-AU-26w" secondAttribute="trailing" id="5BK-Eh-UBD"/>
+                            <constraint firstItem="dYS-WM-kZk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="12" id="Bxe-sU-HwS"/>
+                            <constraint firstItem="m2A-AU-26w" firstAttribute="leading" secondItem="dYS-WM-kZk" secondAttribute="trailing" constant="8" symbolic="YES" id="DQ2-nM-EWn"/>
+                            <constraint firstItem="RWx-VI-36A" firstAttribute="leading" secondItem="zd8-3L-Beh" secondAttribute="leading" id="HA1-fB-IlN"/>
+                            <constraint firstItem="dIV-s7-M9C" firstAttribute="trailing" secondItem="UZh-Wr-i08" secondAttribute="trailing" id="HKr-MH-fg4"/>
+                            <constraint firstItem="m2A-AU-26w" firstAttribute="trailing" secondItem="zd8-3L-Beh" secondAttribute="trailing" id="KWN-eF-a86"/>
+                            <constraint firstItem="m2A-AU-26w" firstAttribute="leading" secondItem="dIV-s7-M9C" secondAttribute="leading" id="Pv1-WE-LVe"/>
+                            <constraint firstItem="UZh-Wr-i08" firstAttribute="leading" secondItem="zd8-3L-Beh" secondAttribute="leading" id="R0J-x8-AJD"/>
+                            <constraint firstItem="RWx-VI-36A" firstAttribute="trailing" secondItem="zd8-3L-Beh" secondAttribute="trailing" id="WFN-Ug-TD8"/>
+                            <constraint firstItem="cwG-d2-TlU" firstAttribute="centerY" secondItem="dIV-s7-M9C" secondAttribute="centerY" constant="-0.5" id="aLI-GE-C9A"/>
+                            <constraint firstItem="dIV-s7-M9C" firstAttribute="leading" secondItem="cwG-d2-TlU" secondAttribute="trailing" constant="8" symbolic="YES" id="afg-Un-kmv"/>
+                            <constraint firstItem="RWx-VI-36A" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="db6-fb-3Zf"/>
+                            <constraint firstItem="zd8-3L-Beh" firstAttribute="top" secondItem="RWx-VI-36A" secondAttribute="bottom" constant="8" symbolic="YES" id="sPM-Ah-nxi"/>
+                            <constraint firstAttribute="bottom" secondItem="UZh-Wr-i08" secondAttribute="bottom" constant="20" symbolic="YES" id="uis-61-m9t"/>
+                            <constraint firstItem="dYS-WM-kZk" firstAttribute="leading" secondItem="cwG-d2-TlU" secondAttribute="leading" id="yGI-Og-ns9"/>
+                            <constraint firstItem="cwG-d2-TlU" firstAttribute="top" secondItem="dYS-WM-kZk" secondAttribute="bottom" constant="17" id="zLR-1t-jvY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accuracyTextField" destination="m2A-AU-26w" id="iaT-Iv-5Yr"/>
+                        <outlet property="bottomLayoutConstraint" destination="01U-gf-50B" id="zAj-kd-BJj"/>
+                        <outlet property="distanceFilterTextField" destination="dIV-s7-M9C" id="f0P-eq-kf5"/>
                         <outlet property="locationButton" destination="UZh-Wr-i08" id="rRB-Nk-lkA"/>
                         <outlet property="speedLabel" destination="zd8-3L-Beh" id="2bZ-GW-0tn"/>
                     </connections>
