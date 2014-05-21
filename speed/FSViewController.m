@@ -35,11 +35,11 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    self.locationManager.distanceFilter = 600.0f;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    self.locationManager.distanceFilter = 10.0f;
     
-    self.accuracyTextField.text = @"100";
-    self.distanceFilterTextField.text = @"600";
+    self.accuracyTextField.text = @"10";
+    self.distanceFilterTextField.text = @"10";
 }
 
 - (IBAction)toggleLocationServices:(UIButton *)sender {
